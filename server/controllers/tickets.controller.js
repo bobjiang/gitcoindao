@@ -67,11 +67,10 @@ async function addTicket(req, reply) {
           .replace("\n", "");
         const getTicketName = cleanData()
           .split("Ticket Name: ")[1]
-          .split("Creation Method:")[0];
-        const getTicketId = htm
-          .split("This ticket has been renamed!")[1]
-          .split("&gt;")[0]
-          .split("&lt;#")[1];
+          .split("Creation Method:")[0]
+          .trim();
+        const getTicketId =
+          getTicketName.split("-")[getTicketName.split("-").length - 1];
         const getInvoledUsers = htm
           .match(/<a>(.*?)<\/a>/g)
           .filter(

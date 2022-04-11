@@ -31,7 +31,7 @@ fastify.get("/", function (req, reply) {
   reply.send({ message: "Hello! Go to /tickets instead" });
 });
 
-fastify.listen(8080, function (err, address) {
+fastify.listen(process.env.PORT, '0.0.0.0', function (err, address) {
   if (err) {
     fastify.log.error(err);
     process.exit(1);

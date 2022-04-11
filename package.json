@@ -31,11 +31,11 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start:web": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node server/index.js",
+    "start": "node server/index.js",
     "server:dev": "nodemon server/index.js"
   },
   "eslintConfig": {

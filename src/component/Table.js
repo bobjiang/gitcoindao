@@ -58,17 +58,17 @@ const TableRow = React.forwardRef(
         {data.ticketCreator}
       </p>
       <p>
-        <strong>Who is Involved: </strong>
+        <strong>Who is Involved: <br /></strong>
         {data.involved.map((i) => (
           <React.Fragment key={i}>
-            <br />
             {i},
+            <br />
           </React.Fragment>
         ))}
       </p>
       <p style={{ display: "flex", alignItems: "center" }}>
         <button
-          style={{ padding: "8px 10px", margin: "0px auto auto auto" }}
+          style={{ padding: "8px 10px", margin: "3px" }}
           id="btn"
           onClick={() => setIsModalVisible(data._id)}
         >

@@ -1,4 +1,44 @@
-# Getting Started with Create React App
+# GitcoinDAO User Support
+
+## Install dependencies
+### `yarn install`
+
+#
+## Tech
+- Frontend: React
+- Backend: Node, Fastify
+
+#
+# Backend - Node, Fastify
+
+## Fastify
+Fastify framework based backend api for NodeJs application
+
+## Build/Run application:
+### `npm start` (for production environment)
+### `npm server:dev` (for development environment)
+
+#
+### **Application health status:**
+* information about the application and its health status
+```
+GET /
+```
+
+## **Routes:**
+```
+POST /ticket to upload a html file and add ticket record 
+GET /tickets to get all ticket records
+GET /tickets/:id to get a ticket record
+PUT /tickets/:id to post a comment to a ticket record 
+DEL /tickets/:id to delete a ticket record.
+```
+
+**note:** :id is the mongodb _id (unique id) to fetch data
+
+#
+# Frontend - React
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,10 +46,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start:web`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the app in the development mode.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.

@@ -13,7 +13,7 @@ fastify.register(require("fastify-mongodb"), {
 
 fastify.register(require("fastify-cors"), {
   origin: process.env.ORIGIN,
-  methods: ["POST","GET", "PUT"]
+  methods: ["*"]
 });
 
 // second plugin
@@ -31,7 +31,7 @@ fastify.get("/", function (req, reply) {
   reply.send({ message: "Hello! Go to /tickets instead" });
 });
 
-fastify.listen(process.env.APP_PORT, '0.0.0.0', function (err, address) {
+fastify.listen(process.env.PORT, '0.0.0.0', function (err, address) {
   if (err) {
     fastify.log.error(err);
     process.exit(1);

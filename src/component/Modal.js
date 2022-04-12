@@ -18,7 +18,10 @@ const TicketModal = ({ children, isModalVisible, setIsModalVisible }) => {
               icon={<ArrowLeftOutlined />}
             />
             <div style={{ borderLeft: "3px solid #b3b3b3", height: 20 }} />
-            <Button type="text" onClick={() => window.open(`/${isModalVisible}`, "_blank")}>
+            <Button
+              type="text"
+              onClick={() => window.open(`/${isModalVisible}`, "_blank")}
+            >
               Open as Page
             </Button>
           </Space>

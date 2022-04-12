@@ -6,21 +6,26 @@ function useFetch(query, page = 1, sort) {
   const [error, setError] = useState(false);
   const [list, setList] = useState([]);
   const [refresh, setRefresh] = useState(0);
-  const [metaData, setMetaDate] = useState({hasMore: true});
+  const [metaData, setMetaDate] = useState({ hasMore: true });
 
   const sendQuery = useCallback(async () => {
-    if(metaData?.hasMore || page === 1) {
+    if (metaData?.hasMore || page === 1) {
       try {
         await setLoading(true);
         await setError(false);
-        const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/tickets`, {
-          params: {
-            page,
-            queryText: query,
-            sort: JSON.stringify(sort)
+        const res = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}/tickets`,
+          {
+            params: {
+              page,
+              queryText: query,
+              sort: JSON.stringify(sort),
+            },
           }
-        });
-        await setList((prev) => page === 1 ? [...res?.data?.data] : [...prev, ...res?.data?.data]);
+        );
+        await setList((prev) =>
+          page === 1 ? [...res?.data?.data] : [...prev, ...res?.data?.data]
+        );
         await setMetaDate({ ...res?.data });
         setLoading(false);
         setError(null);

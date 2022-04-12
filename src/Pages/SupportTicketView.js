@@ -18,7 +18,12 @@ function SupportTicketView({ _id }) {
   useEffect(() => {
     if (Object.entries(ticket).length > 0) {
       axios
-        .get(`${process.env.REACT_APP_SERVER_URL}/${ticket?.link.replace("server/", "")}`)
+        .get(
+          `${process.env.REACT_APP_SERVER_URL}/${ticket?.link.replace(
+            "server/",
+            ""
+          )}`
+        )
         .then((result) => {
           setContent(result.data);
         });
@@ -135,7 +140,7 @@ function SupportTicketView({ _id }) {
           </main>
         </React.Fragment>
       ) : (
-        <Loader  />
+        <Loader />
       )}
     </div>
   );

@@ -1,11 +1,10 @@
-import { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import 'antd/dist/antd.css';
-import Loader from './component/Loader';
+import { Suspense, lazy } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "antd/dist/antd.css";
+import Loader from "./component/Loader";
 
-const SupportTicketsView = lazy(() => import('./Pages/SupportTicketsListView'));
-const SupportTicketView = lazy(() => import('./Pages/SupportTicketView'));
-
+const SupportTicketsView = lazy(() => import("./Pages/SupportTicketsListView"));
+const SupportTicketView = lazy(() => import("./Pages/SupportTicketView"));
 
 const App = () => (
   <BrowserRouter>

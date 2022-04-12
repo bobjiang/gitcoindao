@@ -11,7 +11,9 @@ function UseFetchTicket(id) {
     try {
       await setLoading(true);
       await setError(false);
-      const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/tickets/${id}`);
+      const res = await axios.get(
+        `${process.env.REACT_APP_SERVER_URL}/tickets/${id}`
+      );
       await setTicket(res?.data);
       setLoading(false);
       setError(null);
@@ -22,11 +24,14 @@ function UseFetchTicket(id) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, refresh]);
 
+  const handleDeleteTicket = (_id) =>
+    setTicket((prevTickets) => prevTickets.filter((i) => i._id !== _id));
+
   useEffect(() => {
     sendQuery(id);
   }, [id, sendQuery]);
 
-  return { loading, error, ticket, setRefresh };
+  return { loading, error, ticket, setRefresh, handleDeleteTicket };
 }
 
 export default UseFetchTicket;

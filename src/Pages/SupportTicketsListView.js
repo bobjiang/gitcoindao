@@ -1,4 +1,6 @@
 import React, { useState, useRef, useCallback } from "react";
+import axios from "axios";
+import { notification } from "antd";
 import TicketModal from "../component/Modal";
 import SupportTicketView from "./SupportTicketView";
 import { TableHead, TableRow, TableRowLoader } from "../component/Table";
@@ -13,11 +15,8 @@ function SupportTicketsListView() {
   const [query] = useState("");
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState({ ticketCreatedAt: -1 });
-  const { loading, error, list, metaData, setRefresh } = useFetch(
-    query,
-    page,
-    sort
-  );
+  const { loading, error, list, metaData, setRefresh, handleDeleteTicket } =
+    useFetch(query, page, sort);
 
   const observer = useRef();
 
@@ -56,6 +55,26 @@ function SupportTicketsListView() {
     </div>
   );
 
+  const confirm = (_id, name) => {
+    axios
+      .delete(`${process.env.REACT_APP_SERVER_URL}/tickets/${_id}`)
+      .then(() => {
+        handleDeleteTicket(_id);
+        notification.success({
+          message: "Success",
+          description: `Ticket, ${name}, has been deleted successfully.`,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        return notification.warning({
+          message: "Error",
+          description:
+            "Can not delete this ticket at the moment, Please try again.",
+        });
+      });
+  };
+
   return (
     <div className="Ticket">
       {isModalVisible && (
@@ -87,10 +106,18 @@ function SupportTicketsListView() {
                       data={item}
                       key={index}
                       setIsModalVisible={setIsModalVisible}
+                      confirm={confirm}
                     />
                   );
                 } else {
-                  return <TableRow data={item} key={index} setIsModalVisible={setIsModalVisible} />;
+                  return (
+                    <TableRow
+                      confirm={confirm}
+                      data={item}
+                      key={index}
+                      setIsModalVisible={setIsModalVisible}
+                    />
+                  );
                 }
               })}
               {loading &&

@@ -1,8 +1,8 @@
-const multer = require('fastify-multer');
+const multer = require("fastify-multer");
 const fastify = require("fastify")({ logger: true });
-const fastifyStatic = require('fastify-static')
+const fastifyStatic = require("fastify-static");
 const dotenv = require("dotenv");
-const path = require('path');
+const path = require("path");
 
 dotenv.config();
 
@@ -13,14 +13,14 @@ fastify.register(require("fastify-mongodb"), {
 
 fastify.register(require("fastify-cors"), {
   origin: process.env.ORIGIN,
-  methods: ["*"]
+  methods: ["*"],
 });
 
 // second plugin
 fastify.register(fastifyStatic, {
-  root: path.join(__dirname, 'uploads'),
-  prefix: '/uploads/',
-})
+  root: path.join(__dirname, "uploads"),
+  prefix: "/uploads/",
+});
 
 fastify.register(multer.contentParser);
 
@@ -31,7 +31,7 @@ fastify.get("/", function (req, reply) {
   reply.send({ message: "Hello! Go to /tickets instead" });
 });
 
-fastify.listen(process.env.PORT, '0.0.0.0', function (err, address) {
+fastify.listen(process.env.PORT, "0.0.0.0", function (err, address) {
   if (err) {
     fastify.log.error(err);
     process.exit(1);

@@ -1,5 +1,13 @@
 import React from "react";
-import { Comment, Form, Button, List, Input, Tooltip, notification } from "antd";
+import {
+  Comment,
+  Form,
+  Button,
+  List,
+  Input,
+  Tooltip,
+  notification,
+} from "antd";
 import moment from "moment";
 import axios from "axios";
 
@@ -16,7 +24,9 @@ const CommentList = (props) => (
       <Comment
         content={<p>{props?.content?.props?.children}</p>}
         datetime={
-          <Tooltip title={moment(props?.datetime).format("YYYY-MM-DD HH:mm:ss")}>
+          <Tooltip
+            title={moment(props?.datetime).format("YYYY-MM-DD HH:mm:ss")}
+          >
             <span>{moment(props?.datetime).fromNow()}</span>
           </Tooltip>
         }
@@ -91,9 +101,8 @@ export default class CommentSection extends React.Component {
       .catch((err) => {
         console.log(err);
         return notification.warning({
-          message: 'Error',
-          description:
-            'Can not post comment at this time, Please try again.',
+          message: "Error",
+          description: "Can not post comment at this time, Please try again.",
         });
       });
   };

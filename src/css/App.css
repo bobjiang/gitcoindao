@@ -136,7 +136,8 @@ fieldset.filepond--file-wrapper.filepond--file-wrapper {
   text-align: center;
 }
 
-button#btn, .ant-btn.ant-btn-primary {
+button#btn,
+.ant-btn.ant-btn-primary {
   outline: none;
   border: none;
   border-radius: 3px;
@@ -240,7 +241,7 @@ button#btn, .ant-btn.ant-btn-primary {
     flex-direction: column;
     padding: 3px 15px;
   }
-  .table-body_row p { 
+  .table-body_row p {
     width: 100%;
   }
   .add-ticket {

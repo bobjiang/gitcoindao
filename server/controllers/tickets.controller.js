@@ -26,7 +26,7 @@ async function listTickets(req, reply) {
       reactive: false,
     })
     .toArray();
-  const collectionTotal = await tickets.find({}).count();
+  const collectionTotal = await tickets.countDocuments();
   reply.code(200).send({
     data: result,
     page,

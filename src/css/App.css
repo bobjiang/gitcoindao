@@ -1,0 +1,252 @@
+/* Ticket Page */
+.Ticket-header {
+  padding: 70px 40px 30px;
+  /* color: #140E0E; */
+  background-color: #0d003c;
+}
+
+.Ticket-header h1 {
+  font-size: 3rem;
+  color: #fff !important;
+}
+
+.Ticket-body {
+  width: 90%;
+  margin: 2rem auto 7rem;
+}
+
+main {
+  min-height: 67vh;
+}
+
+/* Add Ticket */
+.add-ticket {
+  background: #fff;
+  padding: 20px 10px;
+  margin-top: -70px;
+  margin-left: auto;
+  color: #100d10;
+  min-height: 80px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 36px;
+  z-index: 9;
+  box-shadow: 0px 0px 5px 3px #0d003c1c;
+}
+
+.filepond--wrapper {
+  width: 290px;
+}
+
+.filepond--root {
+  margin: 0 !important;
+  background-color: transparent;
+  /* border: 1px dotted #0d003c; */
+}
+
+.filepond--root.filepond--hopper div {
+  background-color: transparent;
+  color: #0d003c;
+  font-weight: 900;
+}
+
+fieldset.filepond--file-wrapper.filepond--file-wrapper {
+  box-shadow: 0px 2px 6px 6px #6c6c7f26;
+  margin: 0;
+  border-radius: 8px;
+  padding: 0;
+  min-width: 0;
+  height: 100%;
+  border: none;
+}
+
+/* Table */
+.table {
+  position: relative;
+}
+
+.table-head_row,
+.table-body_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table-head_row p,
+.table-body_row p {
+  padding: 5px 10px;
+  margin: 7px;
+  width: 189px;
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.table-body_row p:nth-child(5) {
+  font-size: 12px;
+}
+
+.table-body_row {
+  background: white;
+  color: #0d003c;
+  border: 1px solid #f2f6f9;
+  margin-bottom: 10px;
+}
+
+.table-body_row:hover {
+  transition: box-shadow 0.4s;
+  border-left: 5px solid #0d003c;
+  box-shadow: 8px 1px 16px 1px #0000001c;
+}
+
+.table-head_row p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Empty State */
+.empty_state {
+  position: absolute;
+  top: 5rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty_state i {
+  margin: auto;
+  margin-bottom: 0px;
+  font-size: 90px;
+  color: #ccc;
+}
+
+.empty_state h3 {
+  margin: 8px 0px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.empty_state p {
+  font-size: 14px;
+  margin: 0px;
+  color: #0d003c;
+  text-align: center;
+}
+
+button#btn,
+.ant-btn.ant-btn-primary {
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 20px;
+  margin: 20px auto auto auto;
+  min-width: auto;
+  max-width: 200px;
+  background: #6f3ff5;
+  color: white;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+/* Loading State */
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: #ccc;
+}
+
+.tg .td {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 0px;
+  overflow: hidden;
+  word-break: normal;
+  border-color: #ccc;
+  color: #333;
+  background-color: #fff;
+}
+
+.line-conc:hover {
+  border: 1px solid #f2f6f9;
+  box-shadow: none;
+}
+
+.line {
+  float: left;
+  width: 100px;
+  height: 16px;
+  margin-top: 12px;
+  border-radius: 7px;
+  background-image: linear-gradient(
+    90deg,
+    #f4f4f4 0px,
+    rgba(229, 229, 229, 0.8) 40px,
+    #f4f4f4 80px
+  );
+  background-size: 600px;
+  animation: shine-lines 2s infinite ease-out;
+}
+
+@keyframes shine-lines {
+  0% {
+    background-position: -100px;
+  }
+  40%,
+  100% {
+    background-position: 140px;
+  }
+}
+
+/* HTML Iframe */
+
+#transcript {
+  background: #000000d9;
+  padding: 30px;
+  color: white;
+  height: 700px;
+  overflow: scroll;
+  width: 100%;
+}
+
+#transcriptfull {
+  background: #000000d9;
+  padding: 30px;
+  color: white;
+}
+
+/* media Queries */
+@media (min-width: 790px) {
+  p strong {
+    display: none;
+  }
+}
+@media (max-width: 790px) {
+  p strong {
+    display: block;
+  }
+  .table-head_row {
+    display: none;
+  }
+  .table-body_row {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 15px;
+  }
+  .table-body_row p {
+    width: 100%;
+  }
+  .add-ticket {
+    margin-right: auto;
+  }
+  .Ticket-header h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}

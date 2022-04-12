@@ -1,4 +1,4 @@
-# GitcoinDAO User Support
+# GitcoinDAO
 
 ## Install dependencies
 ### `yarn install`

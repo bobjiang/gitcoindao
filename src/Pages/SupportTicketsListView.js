@@ -60,7 +60,7 @@ function SupportTicketsListView() {
       .delete(`${process.env.REACT_APP_SERVER_URL}/tickets/${_id}`)
       .then(() => {
         handleDeleteTicket(_id);
-        notification.success({
+        return notification.success({
           message: "Success",
           description: `Ticket, ${name}, has been deleted successfully.`,
         });
@@ -90,7 +90,7 @@ function SupportTicketsListView() {
       </header>
       <main className="Ticket-body">
         <section>
-          <AddTicket setPage={setPage} />
+          <AddTicket handleRefresh={() => setRefresh((prev) => prev + 1)} setPage={setPage} />
         </section>
         <section>
           <div className="table">
@@ -131,7 +131,6 @@ function SupportTicketsListView() {
                   headline="No tickets"
                   line1="There have been no tickets in here yet."
                   line2="Click on the Add new Ticket button to upload."
-                  showRefresh
                 />
               )}
               {!loading && error && list.length === 0 && (

@@ -18,3 +18,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Ant design override */
+.ant-spin-dot-item {
+  background-color: #6f3ff5 !important;
+}
+
+.ant-popover-buttons button.ant-btn.ant-btn-primary.ant-btn-sm {
+  padding: 0px 20px !important;
+  margin: 10px !important;
+}

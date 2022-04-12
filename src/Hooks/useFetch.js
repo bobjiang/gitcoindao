@@ -37,11 +37,17 @@ function useFetch(query, page = 1, sort) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, page, refresh, sort]);
 
+  const handleDeleteTicket = useCallback( (_id) =>
+    setList((prevTickets) => prevTickets.filter((i) => i._id !== _id)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [setList]
+  );
+
   useEffect(() => {
     sendQuery(query);
   }, [query, sendQuery, page]);
 
-  return { loading, error, list, metaData, setRefresh };
+  return { loading, error, list, metaData, setRefresh, handleDeleteTicket };
 }
 
 export default useFetch;

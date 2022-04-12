@@ -17,11 +17,11 @@ create(input, {
   acceptedFileTypes: ["text/html"],
 });
 
-const AddTicket = React.memo(({ setPage }) => {
+const AddTicket = React.memo(({ setPage, handleRefresh }) => {
   const pond = useRef(null);
   const [files, setFiles] = useState([]);
   return (
-    <div className="add-ticket">
+    <div className="add-ticket" onClick={() => files.length > 0 ? pond?.current?.browse() : {}}>
       <FilePond
         ref={pond}
         files={files}
@@ -32,7 +32,7 @@ const AddTicket = React.memo(({ setPage }) => {
         server={`${process.env.REACT_APP_SERVER_URL}/ticket`}
         labelIdle='Drag & Drop or <span class="filepond--label-action">Browse</span> your files to add new ticket for upload.'
         onupdatefiles={(fileItems) => {
-          setFiles(fileItems.map((fileItem) => fileItem.file));
+          setFiles(fileItems.map((fileItem) => fileItem?.file));
         }}
         onprocessfile={(error) => {
           if (error) {
@@ -42,6 +42,7 @@ const AddTicket = React.memo(({ setPage }) => {
             });
           }
           setPage(1);
+          handleRefresh();
           notification.success({
             message: "Success",
             description: "File has been Upload successfully.",

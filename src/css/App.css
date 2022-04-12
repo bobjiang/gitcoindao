@@ -204,6 +204,8 @@ button#btn,
   }
 }
 
+/* HTML Iframe */
+
 #transcript {
   background: #000000d9;
   padding: 30px;
@@ -217,10 +219,6 @@ button#btn,
   background: #000000d9;
   padding: 30px;
   color: white;
-}
-
-.ant-spin-dot-item {
-  background-color: #6f3ff5 !important;
 }
 
 /* media Queries */

@@ -24,14 +24,11 @@ function UseFetchTicket(id) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, refresh]);
 
-  const handleDeleteTicket = (_id) =>
-    setTicket((prevTickets) => prevTickets.filter((i) => i._id !== _id));
-
   useEffect(() => {
     sendQuery(id);
   }, [id, sendQuery]);
 
-  return { loading, error, ticket, setRefresh, handleDeleteTicket };
+  return { loading, error, ticket, setRefresh };
 }
 
 export default UseFetchTicket;

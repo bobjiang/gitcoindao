@@ -25,7 +25,8 @@ const AddTicket = React.memo(({ setPage, handleRefresh }) => {
       <FilePond
         ref={pond}
         files={files}
-        allowMultiple={false}
+        allowMultiple={true}
+        maxFiles={10}
         allowBrowse
         allowReplace
         name="file"

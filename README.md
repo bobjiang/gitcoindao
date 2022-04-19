@@ -21,7 +21,8 @@ The config for the deployment of the application includes the following which ca
 ## Frontend required env(s):
 - REACT_APP_SERVER_URL= api url for the frontend api connection
 
-All this should be set in the .env file and must be set when deploying.
+All this should be set in the .env file when deploying.
+Backend deployment should be done first before frontend as the URL for the backend api would be needed in the env for the frontend.
 ```
 
 #

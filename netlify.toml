@@ -6,3 +6,7 @@
   from="/*"
   to="/index.html"
   status=200
+[template]
+  incoming-hooks = ["Contentful"]
+[template.environment]
+  REACT_APP_SERVER_URL="This is the link to the api for the application (e.g: https://gitcoindao-user-support-api.herokuapp.com) it is without a forward slash."

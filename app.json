@@ -1,0 +1,25 @@
+{
+  "name": "GitcoinDAO API",
+  "description": "API for the GitcoinDAO platform.",
+  "logo": "https://s.gitcoin.co/static/v2/images/new-logos/gc-h-pos.103e252f8ca8.svg",
+  "repository": "https://github.com/bobjiang/gitcoindao",
+  "keywords": ["node", "fastify", "fastify-multer", "mongo"],
+  "env": {
+    "ORIGIN": {
+      "description": "the list of site you want to be able to access this api.",
+      "required": true,
+      "default": "*"
+    },
+    "CONNECT_DB": {
+      "description": "mongodb url for the database connection",
+      "required": true
+    },
+    "PORT": {
+      "description": "port for the api side connection",
+      "required": false
+    }
+  },
+  "scripts": {
+    "postdeploy": "npm run start"
+  }
+}

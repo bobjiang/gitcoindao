@@ -67,9 +67,15 @@ DEL /tickets/:id to delete a ticket record.
 
 **note:** :id is the mongodb _id (unique id) to fetch data
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/bobjiang/gitcoindao/tree/main)
+
 
 #
 # Frontend - React
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbobjiang%2Fgitcoindao&env=REACT_APP_SERVER_URL&envDescription=This%20is%20the%20link%20to%20the%20api%20for%20the%20application%20(e.g%3A%20https%3A%2F%2Fgitcoindao-user-support-api.herokuapp.com)%20it%20is%20without%20a%20forward%20slash.&envLink=https%3A%2F%2Fgithub.com%2Fbobjiang%2Fgitcoindao%23config)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bobjiang/gitcoindao)
+
+#
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

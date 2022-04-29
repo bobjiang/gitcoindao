@@ -18,8 +18,5 @@
       "description": "port for the api side connection",
       "required": false
     }
-  },
-  "scripts": {
-    "postdeploy": "npm run start"
   }
 }
